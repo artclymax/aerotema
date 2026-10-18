@@ -1,0 +1,59 @@
+@use "../tools" as *;
+
+.tech {
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 10);
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: adapt(80, 20);
+		}
+	}
+
+	&__list {
+		--min: 240px;
+		--gap: 20px;
+
+		@include media($mobile-sm) {
+			--min: 1fr;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.tech-item {
+	background: var(--color-light-2);
+	padding: adapt(24, 8) 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	@include media($mobile-sm) {
+		padding-inline: 40px;
+	}
+	&__image {
+		height: adapt(57, 32);
+		display: flex;
+		align-items: center;
+
+		img {
+			height: 100%;
+		}
+	}
+
+	&__title {
+		@include reset;
+		font-weight: inherit;
+		font-size: inherit;
+	}
+
+	&__descr {
+	}
+}

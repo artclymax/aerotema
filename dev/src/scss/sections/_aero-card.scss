@@ -1,0 +1,62 @@
+@use "../tools" as *;
+
+.aero-card {
+	&__link-wrapper {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--color-accent);
+		text-decoration: none;
+		color: inherit;
+		@include hover {
+			.aero-card__link {
+				span::after {
+					right: 0;
+					left: 0;
+				}
+
+				&::after {
+					transform: translateX(8px);
+				}
+			}
+			.aero-card__image img {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	&__image {
+		height: 250px;
+		width: 100%;
+		overflow: hidden;
+		img {
+			transition: all 0.3s;
+		}
+	}
+
+	&__content {
+		padding: adapt(24, 10);
+		background: var(--color-light-2);
+		display: flex;
+		flex-direction: column;
+		gap: adapt(16, 10);
+	}
+
+	&__title {
+	}
+
+	&__decr {
+	}
+
+	&__link {
+		@include reset;
+		border: 0;
+		background: transparent;
+		--width: #{adapt(24, 20)};
+		font-size: adapt(16, 14);
+		font-weight: 500;
+		gap: 9px;
+		&::after {
+			transition: all 0.3s;
+		}
+	}
+}

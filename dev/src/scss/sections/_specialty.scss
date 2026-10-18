@@ -1,0 +1,63 @@
+@use "../tools" as *;
+
+
+.specialty {
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(80, 20);
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+
+		& > * {
+			flex: 1;
+
+			@include media($mobile) {
+				flex: 1 1 100%;
+			}
+		}
+	}
+
+	&__descr {
+	}
+
+	&__list {
+		--min: 240px;
+		gap: adapt(16, 20) adapt(32, 16, $tablet);
+	}
+
+	&__item {
+	}
+}
+
+.specialty-item {
+	padding: adapt(16, 8) 8px;
+	background: var(--color-light-2);
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	&__image {
+		flex-shrink: 0;
+		width: adapt(59, 33);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: adapt(12, 10);
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}

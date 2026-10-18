@@ -1,0 +1,13 @@
+@use "../tools" as *;
+.aero-shop {
+	margin-top: calc(var(--section-padding) * -1);
+	padding-block: calc(var(--section-padding) * 2);
+	background: var(--color-light-2);
+}
+.aero-products-list {
+	--min: 400px;
+	gap: 20px;
+	@include media($tablet-sm) {
+		--min: 300px;
+	}
+}

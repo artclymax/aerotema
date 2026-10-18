@@ -1,0 +1,76 @@
+@use "../tools" as *;
+@use "../components/typography" as *;
+
+.why-choose {
+	padding-bottom: unset;
+	
+	&__title-container {
+		&:not(:last-child) {
+			margin-bottom: adapt(74, 20);
+		}
+	}
+
+	&__title {
+	}
+
+	&__body {
+		padding-block: adapt(47, 40);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	&__container {
+	}
+
+	&__list {
+		@include reset;
+		list-style-type: none;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: adapt(49, 20) 0;
+
+		@include counter(true, ".why-choose-item");
+
+		@include media($mobile-sm) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.why-choose-item {
+	background: var(--color-light);
+	max-width: 340px;
+	padding: adapt(16, 8) adapt(34, 24) adapt(26, 8);
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	box-shadow:
+		0 1px 4px 0 rgba(12, 12, 13, 0.05),
+		0 1px 4px 0 rgba(12, 12, 13, 0.1);
+
+	&:nth-child(4n + 3),
+	&:nth-child(4n + 4) {
+		justify-self: end;
+	}
+	@include media($mobile-sm) {
+		max-width: 100%;
+	}
+	&::before {
+		font-size: adapt(100, 50);
+		font-weight: 500;
+		line-height: 1;
+		opacity: 0.4;
+		margin-left: auto;
+		@extend .text-gradient;
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}

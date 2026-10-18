@@ -1,0 +1,15 @@
+@use "../tools" as *;
+
+.logo {
+	flex-shrink: 0;
+
+	a {
+		display: inline-flex;
+		transition: opacity 0.3s;
+		width: adapt(100, 80);
+		
+		@include hover {
+			opacity: .7;
+		}
+	}
+}

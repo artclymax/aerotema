@@ -1,0 +1,88 @@
+@use "../tools" as *;
+@use "../components/typography" as *;
+
+.about {
+	&__container {
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+		@include media($mobile) {
+			align-items: flex-start;
+		}
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__title {
+		flex: 1 1 auto;
+		@include media($tablet) {
+			flex: 0 1 200px;
+		}
+	}
+
+	&__descr {
+		flex: 0 1 800px;
+	}
+
+	&__list {
+		--min: 298px;
+		--gap: 0px;
+		row-gap: 10px;
+		@include media($mobile) {
+			--min: 1fr;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.about-item {
+	position: relative;
+	padding-inline: adapt(20, 0) 20px;
+	padding-block: adapt(12, 8);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 2px;
+		height: 2px;
+		width: 98%;
+		background: var(--color-accent-light);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 2px;
+		height: 98%;
+		background: var(--color-accent-light);
+	}
+	@include media($mobile, min) {
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	&__title {
+		@include reset;
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+		strong {
+			@extend .title;
+			@extend .title-1;
+		}
+	}
+
+	&__descr {
+	}
+}

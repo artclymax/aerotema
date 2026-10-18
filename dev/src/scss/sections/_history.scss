@@ -1,0 +1,107 @@
+@use "../tools" as *;
+
+.history {
+	padding-block: calc(var(--section-padding) * 2);
+	background-color: var(--color-light-2);
+	background-position: center center; /* x y */
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(80, 20);
+		}
+	}
+
+	&__list {
+		@include reset;
+		list-style-type: none;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0 15px;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 12px;
+			bottom: 12px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 2px;
+			background: var(--color-gray-bd);
+			z-index: -1;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.history-item {
+	display: flex;
+	flex-direction: column;
+	gap: adapt(16, 10);
+	align-items: flex-end;
+	padding-right: adapt(103, 15);
+	position: relative;
+	width: 50%;
+	text-align: right;
+
+	@include media($mobile-sm) {
+		text-align: left;
+		align-items: flex-start;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 12px;
+		right: 0;
+		width: 15px;
+		height: 15px;
+		background: var(--color-accent);
+		border-radius: 50%;
+		transform: translateX(50%);
+	}
+
+	&:nth-child(even) {
+		align-items: flex-start;
+		padding-right: unset;
+		padding-left: adapt(103, 15);
+		margin-left: auto;
+		text-align: left;
+		@include media($mobile-sm) {
+			padding-left: 25px;
+		}
+		&::after {
+			right: unset;
+			left: 0;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__year {
+		@include reset;
+		font-weight: 500;
+		font-size: adapt(24, 18);
+		display: inline-flex;
+		padding: 8px adapt(28, 35);
+		background: var(--color-accent);
+		color: var(--color-white);
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		color: var(--color-gray);
+
+		@include media($mobile) {
+			font-size: 1rem;
+			font-weight: 400;
+		}
+	}
+}

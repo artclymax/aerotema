@@ -1,0 +1,33 @@
+@use "../tools" as *;
+
+:root {
+	// Colors
+	--color-black: #000;
+	--color-white: #fff;
+
+	--color-light: #f6faff;
+	--color-light-2: #edf2fa;
+
+	--color-accent: #26465a;
+	--color-accent-light: #9bc8ff;
+
+	--color-dark: #1f2933;
+
+	--color-gray: #52606d;
+	--color-gray-bd: #c7d2e0;
+
+	--color-orange: #ff922b;
+
+	// Layouts
+	--header-height: 120px;
+	--section-padding: #{adapt(70, 20)};
+
+	--container-width: 1200px;
+	--container-padding: 10px; //! даже если контейнер на весь экран, отступы оставь а ширину сделай на 100%
+
+	// Fonts
+	--font-size-html: 100%; // 1rem = 1px ===> calc(1 / 16 * 100%)
+	--font-size: #{adapt(18, 16)};
+	--font-family-main: "IBM Plex Sans", sans-serif;
+	--line-height: 120%;
+}

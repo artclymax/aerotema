@@ -1,0 +1,93 @@
+@use "../tools" as *;
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	padding-block: adapt(18, 8);
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+	}
+
+	&__logo {
+	}
+
+	&__contacts {
+	}
+
+	&__menu {
+		flex: 0 1 1020px;
+		//max-width: 1020px;
+	}
+
+	&__phone-btn {
+	}
+
+	&__burger-btn {
+	}
+}
+
+.header-menu-contacts {
+	display: flex;
+	align-items: center;
+	gap: 10px adapt(24, 10, $tablet);
+	font-size: adapt(16, 14);
+
+	@include media($tablet) {
+		flex-direction: column;
+		justify-content: center;
+	}
+	&__phone {
+	}
+
+	&__social {
+	}
+
+	&__btn {
+	}
+}
+
+.social {
+	@include reset;
+	list-style-type: none;
+	display: flex;
+	gap: adapt(16, 0);
+
+	&__item {
+	}
+
+	&__link {
+		display: inline-flex;
+		@include square(44px);
+		transition: all 0.3s;
+
+		@include media($tablet) {
+			padding: adapt(1, 10, $finishBreakpoint, $tablet);
+		}
+		@include hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.header-menu {
+	display: flex;
+	gap: 24px;
+	&__list {
+	}
+
+	&__contacts {
+		margin-left: auto;
+		flex-shrink: 0;
+
+		@include media($tablet) {
+			margin-left: 0;
+		}
+	}
+}

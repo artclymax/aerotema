@@ -1,0 +1,156 @@
+@use "../tools" as *;
+
+.single-product-hero {
+	padding-top: calc(var(--header-height) + #{adapt(40, 20)});
+	background: var(--color-light-2);
+	padding-bottom: adapt(80, 20);
+
+	&__container {
+	}
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		gap: adapt(40, 20);
+		&:not(:last-child) {
+			margin-bottom: adapt(80, 40);
+		}
+	}
+
+	&__title {
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__gallery {
+		@include media($mobile) {
+			justify-self: center;
+		}
+	}
+
+	&__content {
+	}
+}
+
+.single-product-hero-gallery {
+	width: adapt(580, 492, $tablet);
+	padding: 1px;
+	@include media($tablet) {
+		width: adapt(492, 340, $finishBreakpoint, $tablet);
+	}
+	&__thumb-swiper {
+		margin-top: adapt(16, 20);
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+
+	&__image {
+		display: flex;
+		width: 100%;
+		height: adapt(574, 342);
+		border: 1px solid var(--color-dark);
+	}
+}
+
+.single-product-hero-gallery-swiper {
+	padding: 1px;
+	&__wrapper {
+	}
+}
+
+.single-product-hero-gallery-slide {
+	&__wrapper-link {
+		box-sizing: border-box;
+		width: 100%;
+		height: adapt(574, 342);
+		border: 1px solid var(--color-dark);
+	}
+}
+
+.single-product-hero-gallery-thumb-swiper {
+	padding: 1px;
+	flex: 0 1 100%;
+	margin: 0;
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__wrapper {
+	}
+
+	&__btn-next {
+	}
+}
+
+.single-product-hero-gallery-thumb-slide {
+	&__image {
+		height: adapt(120, 55);
+		box-sizing: border-box;
+		border: 1px solid var(--color-dark);
+	}
+}
+.single-product-hero-content {
+	display: flex;
+	flex-direction: column;
+	gap: adapt(20, 10);
+
+	&__subtitle {
+	}
+
+	&__descr {
+	}
+
+	&__spec {
+	}
+
+	&__btn {
+		padding-inline: 5px;
+	}
+}
+
+.single-product-spec {
+	background: var(--color-gray-bd);
+	padding: adapt(24, 10);
+	&__title {
+		color: var(--color-black);
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__list {
+		@include reset;
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		gap: adapt(20, 10);
+	}
+
+	&__item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 12px;
+	}
+
+	&__name {
+		@include reset;
+		font-weight: inherit;
+		font-size: adapt(16, 14);
+		color: var(--color-gray);
+	}
+
+	&__value {
+		@include reset;
+	}
+}

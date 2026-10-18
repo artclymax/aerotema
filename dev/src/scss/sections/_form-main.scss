@@ -1,0 +1,53 @@
+@use "../tools" as *;
+
+.form-main {
+	padding-bottom: 0;
+	
+	&__container {
+	}
+	&__title-container {
+		&:not(:last-child) {
+			margin-bottom: adapt(34, 20);
+		}
+	}
+
+	&__title {
+	}
+	&__body {
+		background-color: var(--color-white);
+		background-position: top right;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding-block: adapt(80, 40);
+	}
+	&__content {
+		max-width: 820px;
+		margin: 0 auto;
+	}
+	&__subtitle {
+		text-align: center;
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+
+		@include media($mobile-sm) {
+			font-size: rem(20);
+			font-weight: 400;
+		}
+	}
+
+	&__form {
+	}
+
+	&__small {
+		display: flex;
+		margin-top: 24px;
+		text-align: center;
+		justify-content: center;
+		font-size: adapt(16, 12);
+
+		@include media($mobile-sm) {
+			font-weight: 300;
+		}
+	}
+}

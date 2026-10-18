@@ -1,0 +1,44 @@
+@use "../tools" as *;
+
+.breadcrumbs,
+.woocommerce-breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	gap: adapt(16, 10);
+	color: var(--color-gray);
+	font-size: adapt(14, 12);
+
+	& > span {
+		display: flex;
+		align-items: center;
+		gap: adapt(16, 10);
+
+		&:not(:last-child) {
+			&::after {
+				content: "";
+				height: 8px;
+				width: 5px;
+				background: url("../../../public/images/icons/pagination.svg");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+		}
+
+		a {
+			display: inline-flex;
+			color: inherit;
+			text-decoration: none;
+			transition: all 0.3s;
+
+			@include hover {
+				color: var(--color-dark);
+			}
+		}
+	}
+
+	.current-item,
+	span:last-of-type {
+		color: var(--color-dark);
+	}
+}

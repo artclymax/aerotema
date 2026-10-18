@@ -1,0 +1,133 @@
+@use "../tools" as *;
+
+.single-product-details {
+	padding-block: calc(var(--section-padding) * 2);
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__area {
+	}
+
+	&__docs {
+	}
+
+	&__btn {
+		display: flex;
+		gap: 10px;
+		svg {
+			width: 24px;
+		}
+		&:not(:first-child) {
+			margin-top: adapt(60, 20);
+		}
+	}
+}
+
+.single-product-area {
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__descr {
+		font-size: adapt(16, 14);
+		ul {
+			@include reset;
+			list-style-type: none;
+			display: grid;
+			gap: adapt(16, 10);
+		}
+
+		li {
+			display: flex;
+			gap: 16px;
+
+			&::before {
+				content: "";
+				@include square(16px);
+				background: var(--color-orange);
+				border-radius: 50%;
+				margin-top: 2px;
+			}
+		}
+	}
+}
+
+.single-product-docs {
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__list {
+		@include reset;
+		list-style-type: none;
+		display: grid;
+		gap: 16px;
+	}
+
+	&__item {
+	}
+}
+
+.single-product-docs-item {
+	&__link {
+		text-decoration: none;
+		color: inherit;
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		padding: 8px 16px;
+		background: var(--color-light-2);
+
+		@include hover {
+			.single-product-docs-item__title {
+				&::after {
+					right: 0;
+					left: 0;
+				}
+			}
+		}
+
+		&::before {
+			content: "";
+			@include square(40px);
+			background-color: rgba(#9bc8ff, 0.5);
+			background-image: url("../../../public/images/icons/file.svg");
+			background-position: center center;
+			background-size: 22px;
+			background-repeat: no-repeat;
+		}
+
+		&::after {
+			content: "";
+			@include square(32px);
+			background-image: url("../../../public/images/icons/safe.svg");
+			background-position: center center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			margin-left: auto;
+		}
+	}
+
+	&__content {
+	}
+	&__title {
+		@include hoverLine(center, var(--color-accent), 2px);
+	}
+
+	&__hint {
+		text-transform: uppercase;
+		font-size: adapt(14, 12);
+		color: var(--color-gray);
+	}
+}

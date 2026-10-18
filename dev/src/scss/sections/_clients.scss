@@ -1,0 +1,64 @@
+@use "../tools" as *;
+
+.clients {
+	padding-block: adapt(80, 20);
+	background-color: var(--color-light-2);
+	background-position: top right;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&__container {
+	}
+
+	&__title {
+		text-align: center;
+		&:not(:last-child) {
+			margin-bottom: adapt(24, 10);
+		}
+		@include media($mobile-sm) {
+			text-align: left;
+		}
+	}
+
+	&__descr {
+		text-align: center;
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+		@include media($mobile-sm) {
+			text-align: left;
+		}
+	}
+
+	&__list {
+		gap: 20px;
+	}
+
+	&__item {
+	}
+}
+
+.clients-item {
+	padding: adapt(24, 10);
+	background: var(--color-light-2);
+	flex-direction: column;
+	align-items: flex-start;
+	gap: adapt(16, 10);
+	--width: #{adapt(44, 32)};
+
+	&__wrapper {
+		display: grid;
+		gap: adapt(16, 10);
+	}
+
+	&__title {
+		@include reset;
+		font-weight: inherit;
+		font-size: inherit;
+	}
+
+	&__descr {
+		font-size: adapt(16, 14);
+		color: var(--color-gray);
+	}
+}

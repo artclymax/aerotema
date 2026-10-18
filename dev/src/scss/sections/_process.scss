@@ -1,0 +1,76 @@
+@use "../tools" as *;
+
+.process {
+	padding-block: calc(var(--section-padding) * 2);
+	&__container {
+	}
+
+	&__title {
+		text-align: center;
+		@include media($mobile-sm) {
+			text-align: left;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__list {
+		--min: 220px;
+		gap: adapt(40, 20);
+		@include counter(false, ".process-item");
+	}
+
+	&__item {
+	}
+}
+
+.process-item {
+	text-align: center;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	gap: adapt(16, 10);
+
+	&::before {
+		grid-row: 1;
+		grid-column: 1;
+		text-align: center;
+		font-weight: 700;
+		font-size: adapt(44, 28);
+		line-height: 118%;
+		background: linear-gradient(180deg, #ff7a1a 0%, #ffc94a 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		position: relative;
+		z-index: 2;
+	}
+	&::after {
+		content: "";
+		position: relative;
+		@include square(adapt(95, 60));
+		background: var(--color-accent);
+		border-radius: 50%;
+		grid-row: 1;
+		grid-column: 1;
+	}
+
+	&__title {
+		@include reset;
+		font-weight: inherit;
+		font-size: inherit;
+		align-self: start;
+	}
+
+	&__descr {
+		font-size: adapt(16, 14);
+		color: var(--color-gray);
+		align-self: start;
+		max-width: 228px;
+		@include media($tablet) {
+			max-width: 100%;
+		}
+	}
+}

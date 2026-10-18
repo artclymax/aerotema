@@ -1,0 +1,68 @@
+@use "../tools" as *;
+@use "../components/typography" as *;
+
+.steps {
+	&__container {
+		display: grid;
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(80, 20);
+		}
+	}
+
+	&__list {
+		@include reset;
+		list-style-type: none;
+		display: grid;
+		gap: adapt(24, 20);
+		@include counter(true, ".steps-item");
+
+		&:not(:last-child) {
+			margin-bottom: adapt(80, 20);
+		}
+	}
+
+	&__item {
+	}
+
+	&__link {
+		justify-self: center;
+		max-width: 400px;
+	}
+}
+
+.steps-item {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	&:not(:last-child) {
+		padding-bottom: adapt(40, 10);
+		border-bottom: 2px solid var(--color-accent-light);
+	}
+	&::before {
+		flex: 0 0 80px;
+		font-size: adapt(60, 30);
+		font-weight: 500;
+		line-height: 1;
+		@extend .text-gradient;
+	}
+	&__content {
+		flex: 0 1 820px;
+		display: grid;
+		gap: adapt(24, 10);
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}
+.title-3 {
+}
+.descr {
+}
+.btn {
+}

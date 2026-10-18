@@ -1,0 +1,28 @@
+@use "../tools" as *;
+@use "../components/typography" as *;
+
+.hero-page {
+	padding-top: calc(var(--header-height) + #{adapt(40, 20)});
+	padding-bottom: adapt(40, 20);
+	margin-bottom: var(--section-padding);
+	background: var(--color-light-2);
+	
+	&__container {
+	}
+	.woocommerce-breadcrumb {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__descr {
+		strong {
+			@extend .title-3;
+		}
+	}
+}
